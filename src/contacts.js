@@ -12,7 +12,7 @@ function addContacts() {
   contacts.appendChild(fragment);
 }
 
-contacts.addEventListener("scroll", (e) => {
+contacts.addEventListener("scroll", () => {
   const items = Array.from(contacts.getElementsByClassName("contact"));
   const itemOffsets = items.map((item) => item.offsetTop);
   const topItemIndex = itemOffsets.findIndex(

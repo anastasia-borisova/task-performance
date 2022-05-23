@@ -3,11 +3,11 @@
     scroll-padding: 18px;
     overflow-y: scroll;
     height: 300px;
-    position: relative;
+    position: relative
 }
 
 .contact {
-    scroll-snap-align: start;
+    scroll-snap-align: start
 }
 
 .stickyHeader {
