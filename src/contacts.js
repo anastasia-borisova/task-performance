@@ -12,14 +12,18 @@ function addContacts() {
   contacts.appendChild(fragment);
 }
 
-contacts.addEventListener("scroll", (e) => {
-  const items = Array.from(contacts.getElementsByClassName("contact"));
-  const itemOffsets = items.map((item) => item.offsetTop);
-  const topItemIndex = itemOffsets.findIndex(
-    (offset) => contacts.scrollTop - offset <= -18
-  );
+contacts.addEventListener("scroll", () => {
+  const scrollTop = contacts.scrollTop;
+  const contactHeight = 18.5185;
+  let topItemIndex = -1;
+  for(let i = 1; i <= 50000; i++) {
+    if(scrollTop - Math.ceil(contactHeight * i) <= -19) {
+      topItemIndex = i - 1;
+      break;
+    }
+  }
   if (topItemIndex !== -1) {
-    stickyHeader.textContent = items[topItemIndex].textContent;
+    stickyHeader.textContent = contacts.children[topItemIndex].textContent;
   }
 });
 
